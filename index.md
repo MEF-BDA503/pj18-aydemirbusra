@@ -1,7 +1,7 @@
 ---
 title: "Assingment 1"
 author: "Busra Aydemir"
-date: "10/14/2018"
+date: "17/14/2018"
 output: html_document
 ---
 
@@ -40,5 +40,8 @@ In modern advertising Google knows what you are searching for,Amazon knows what 
 Data Analysis technologies such as t-test, ANOVA, regression, conjoint analysis, and factor analysis are widely used in the marketing research areas of A/B Testing, consumer preference analysis, market segmentation, product pricing, sales driver analysis, and sales forecast etc.
 
 [Click](https://www.r-bloggers.com/data-analysis-for-marketing-research-with-r-language-1/)
+
+
+
 
 
