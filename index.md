@@ -1,5 +1,3 @@
-
-
 ---
 title: "Assingment 1"
 author: "Busra Aydemir"
