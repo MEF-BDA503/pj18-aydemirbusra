@@ -6,7 +6,9 @@
 
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="pandoc" />---
+<meta name="generator" content="pandoc" />
+
+---
 title: "Assingment 1"
 author: "Busra Aydemir"
 date: "10/10/2018"
