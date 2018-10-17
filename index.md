@@ -1,7 +1,7 @@
 ---
 title: "Assingment 1"
 author: "Busra Aydemir"
-date: "17/14/2018"
+date: "10/10/2018"
 output: html_document
 ---
 
