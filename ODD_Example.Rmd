@@ -1,0 +1,52 @@
+---
+title: "ODD_example"
+author: "Busra Aydemir"
+date: "10/31/2018"
+output: html_document
+---
+
+knitr::opts_chunk$set(echo = TRUE)
+## Downloaded These Packages
+```
+install.packages("readxl")
+install.packages("tidyverse")
+```
+## Used This Libraries
+```
+library(readxl)
+library(tidyverse)
+```
+
+## Download Raw Data
+```
+# Create a temporary file
+tmp<-tempfile(fileext=".xlsx")
+# Download file from repository to the temp file
+download.file("https://github.com/MEF-BDA503/pj18-aydemirbusra/blob/master/busra%20aydemir2016mayis.xlsx?raw=true",destfile=tmp)
+# Read that excel file using readxl package's read_excel function. You might need to adjust the parameters (skip, col_names) according to your raw file's format.
+raw_data<-readxl::read_excel(tmp,skip=7,col_names=FALSE)
+# Remove the temp file
+file.remove(tmp)
+```
+```
+# Remove the last two rows because they are irrelevant (total and empty rows)
+raw_data <- raw_data %>% slice(-c(49,50))
+
+# Let's see our raw data
+head(raw_data)
+```
+## Make Data Civilized
+
+colnames(raw_data) <- c("brand_name","auto_dom","auto_imp","auto_total","comm_dom","comm_imp","comm_total","total_dom","total_imp","total_total")
+car_data_may_16 <- raw_data %>% mutate_if(is.numeric,funs(ifelse(is.na(.),0,.))) %>% mutate(year=2016,month=5)
+
+print(car_data_may_16,width=Inf)
+
+## Save Civilized Data
+saveRDS(car_data_may_16,file="data_may_16.rds")
+
+## Some Analysis
+car_data_may_16 %>% 
+  filter(auto_total > 0 & comm_total > 0) %>%
+  select(brand_name,total_total) %>%
+  arrange(desc(total_total))
